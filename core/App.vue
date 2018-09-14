@@ -1,4 +1,4 @@
-<template>
+<!--<template>
     <div id="app">
         <v-app>
             <app-header
@@ -231,4 +231,20 @@ $page-transition-duration = 0.35s
 
             &.fade-leave-active
                 opacity 0
+</style>-->
+
+<template>
+    <div id="app" class="fillcontain">
+        <router-view></router-view>
+    </div>
+</template>
+<script>
+export default {
+    
+}
+</script>
+<style lang="less">
+    @import url('../assets/css/common');
 </style>
+
+

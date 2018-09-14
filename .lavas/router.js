@@ -2,64 +2,77 @@ import Vue from 'vue';
 import Router from 'vue-router';
 
     
-import _15368272982679d49a922ebc8a6d77ca82c0a74289b98 from '@/pages/Appshell.vue';
+import _15369096105559d49a922ebc8a6d77ca82c0a74289b98 from '@/pages/Appshell.vue';
     
 
     
-import _1536827298267f7fc7554d202a317883db2ae067316d3 from '@/pages/detail/_id.vue';
+import _1536909610555f7fc7554d202a317883db2ae067316d3 from '@/pages/detail/_id.vue';
     
 
     
-import _1536827298267d2462dcf0c7beccd286c658e08187914 from '@/pages/Error.vue';
+import _1536909610555d2462dcf0c7beccd286c658e08187914 from '@/pages/Error.vue';
     
 
     
-import _153682729826767830448037326425509e44bce7632b7 from '@/pages/Index.vue';
+import _153690961055567830448037326425509e44bce7632b7 from '@/pages/Index.vue';
     
 
     
-import _1536827298267038de326b0270e97f9eef95b6bc74ed7 from '@/pages/Search.vue';
+import _15369096105555161b10bdaca50d3fecb94cba7fde25b from '@/pages/Manager.vue';
     
 
     
-import _15368272982679e9e8c7e010fe863701ae937c5ddf387 from '@/pages/TestMap.vue';
+import _1536909610557304f2e7c03eeee409490fab713411b7e from '@/pages/manager/TestMap.vue';
+    
+
+    
+import _1536909610555038de326b0270e97f9eef95b6bc74ed7 from '@/pages/Search.vue';
     
 
 
 let routes = [
     {
         "path": "/appshell",
-        "component": _15368272982679d49a922ebc8a6d77ca82c0a74289b98,
+        "component": _15369096105559d49a922ebc8a6d77ca82c0a74289b98,
         "meta": {},
         "name": "appshell"
     },
     {
         "path": "/detail/:id",
-        "component": _1536827298267f7fc7554d202a317883db2ae067316d3,
+        "component": _1536909610555f7fc7554d202a317883db2ae067316d3,
         "meta": {},
         "name": "detailId"
     },
     {
         "path": "/",
-        "component": _153682729826767830448037326425509e44bce7632b7,
+        "component": _153690961055567830448037326425509e44bce7632b7,
         "meta": {},
         "name": "index"
     },
     {
+        "path": "/manager",
+        "component": _15369096105555161b10bdaca50d3fecb94cba7fde25b,
+        "meta": ['MybatisPLUS'],
+        "name": "manager",
+        "redirect":"/manager/test-map",
+        "children": [
+            {
+                "path": "test-map",
+                "component": _1536909610557304f2e7c03eeee409490fab713411b7e,
+                "meta": ['MybatisPLUS','代码自动生成'],
+                "name": "managerTestMap"
+            }
+        ]
+    },
+    {
         "path": "/search",
-        "component": _1536827298267038de326b0270e97f9eef95b6bc74ed7,
+        "component": _1536909610555038de326b0270e97f9eef95b6bc74ed7,
         "meta": {},
         "name": "search"
     },
     {
-        "path": "/test-map",
-        "component": _15368272982679e9e8c7e010fe863701ae937c5ddf387,
-        "meta": {},
-        "name": "testMap"
-    },
-    {
         "path": "/error",
-        "component": _1536827298267d2462dcf0c7beccd286c658e08187914,
+        "component": _1536909610555d2462dcf0c7beccd286c658e08187914,
         "meta": {},
         "name": "error",
         "alias": "*"
